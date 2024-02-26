@@ -1,5 +1,5 @@
-###############################################################################################
-###############################################################################################
+#####################################################
+#####################################################
 #####
 #####   https://www.gamehoster.net
 #####   Grand Theft Auto - FiveM
@@ -7,9 +7,9 @@
 #####   ESX & Mods Custom Server
 #####
 #####
-###############################################################################################
-###############################################################################################
-
+####################################################
+####################################################
+<br />
 ## Welcome
 All info can be found ingame through the Tablet "L"
 
@@ -22,10 +22,7 @@ Job Tutorials
 OpenCAD  
 YouTube  
 Snake  
-
-
-
-
+<br />
 
 ## Key Bindings
 Key       Addon              Action       Key #
@@ -53,26 +50,26 @@ X       Hands Up                -           -
 Y       radargun            menu open       246  
 E       radargun              freeze        38  
   
-
+<br />
 ## Text Commands
 ### kcc-help
 /help  
 /help-rp  
 /help-police  
 /help-race  
-
+<br />
 ### RPCommands - Core Commands  
 //      Out Of Character  
 /me     Me  
 /it     none  
-
+<br />
 ### RPCommands - Roleplay Commands  
 /r          [Radio]  
 /dipatch    [Dispatch]  
 /911  
 /rpname  
 /roll  
-
+<br />
 ### RPCommands - Police Commands  
 /p  
 /20   
@@ -94,7 +91,7 @@ E       radargun              freeze        38
 /11  
 /28  
 /29  
-
+<br />
 
 ## Job List  
 Airlines  
@@ -124,7 +121,7 @@ Taxi Driver
 The Lost MC*  
 Unemployed  
 Unicorn Club  
-
+<br />
 
 ## Install
 GameHoster.net - Rent a high quality gaming server now
