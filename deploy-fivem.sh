@@ -97,7 +97,7 @@ echo "mySQL"
 
 echo "FiveM - Base"
     echo "Get Packages"
-        wget -P "$TFIVEM" https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/1387-893803f3921511bed298a54e95a2ba7df5860f7c/fx.tar.xz
+        wget -P "$TFIVEM" https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/7290-a654bcc2adfa27c4e020fc915a1a6343c3b4f921/fx.tar.xz
 
     echo "Extract Package"
         tar -xf "$TFIVEM"/fx.tar.xz --directory "$MAIN"/
