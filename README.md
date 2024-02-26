@@ -124,6 +124,6 @@ Unicorn Club
 <br />
 
 ## Install
-GameHoster.net - Rent a high quality gaming server now
+GameHoster.net - Rent a high quality gaming server now<br />
 Install fivem base server `./deploy-fivem.sh`  
 adds essentialmode, esx, and other packages. 
