@@ -29,10 +29,10 @@ USE `essentialmode`;
 --
 
 CREATE TABLE IF NOT EXISTS `addon_account` (
-`name` varchar(60) NOT NULL,
-`label` varchar(100) NOT NULL,
-`shared` int(11) NOT NULL,
-PRIMARY KEY (`name`)
+  `name` varchar(60) NOT NULL,
+  `label` varchar(100) NOT NULL,
+  `shared` int(11) NOT NULL,
+  PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -69,13 +69,13 @@ INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `addon_account_data` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`account_name` varchar(100) DEFAULT NULL,
-`money` int(11) NOT NULL,
-`owner` varchar(100) DEFAULT NULL,
-PRIMARY KEY (`id`),
-UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
-KEY `index_addon_account_data_account_name` (`account_name`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_name` varchar(100) DEFAULT NULL,
+  `money` int(11) NOT NULL,
+  `owner` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
+  KEY `index_addon_account_data_account_name` (`account_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -107,10 +107,10 @@ INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `addon_inventory` (
-`name` varchar(60) NOT NULL,
-`label` varchar(100) NOT NULL,
-`shared` int(11) NOT NULL,
-PRIMARY KEY (`name`)
+  `name` varchar(60) NOT NULL,
+  `label` varchar(100) NOT NULL,
+  `shared` int(11) NOT NULL,
+  PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -145,15 +145,15 @@ INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`inventory_name` varchar(100) NOT NULL,
-`name` varchar(100) NOT NULL,
-`count` int(11) NOT NULL,
-`owner` varchar(60) DEFAULT NULL,
-PRIMARY KEY (`id`),
-KEY `index_addon_inventory_items_inventory_name_name` (`inventory_name`,`name`),
-KEY `index_addon_inventory_items_inventory_name_name_owner` (`inventory_name`,`name`,`owner`),
-KEY `index_addon_inventory_inventory_name` (`inventory_name`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `inventory_name` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `count` int(11) NOT NULL,
+  `owner` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_addon_inventory_items_inventory_name_name` (`inventory_name`,`name`),
+  KEY `index_addon_inventory_items_inventory_name_name_owner` (`inventory_name`,`name`,`owner`),
+  KEY `index_addon_inventory_inventory_name` (`inventory_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -163,11 +163,11 @@ KEY `index_addon_inventory_inventory_name` (`inventory_name`)
 --
 
 CREATE TABLE IF NOT EXISTS `aircrafts` (
-`name` varchar(60) NOT NULL,
-`model` varchar(60) NOT NULL,
-`price` int(11) NOT NULL,
-`category` varchar(60) DEFAULT NULL,
-PRIMARY KEY (`model`)
+  `name` varchar(60) NOT NULL,
+  `model` varchar(60) NOT NULL,
+  `price` int(11) NOT NULL,
+  `category` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -210,9 +210,9 @@ INSERT INTO `aircrafts` (`name`, `model`, `price`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `aircraft_categories` (
-`name` varchar(60) NOT NULL,
-`label` varchar(60) NOT NULL,
-PRIMARY KEY (`name`)
+  `name` varchar(60) NOT NULL,
+  `label` varchar(60) NOT NULL,
+  PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -230,14 +230,14 @@ INSERT INTO `aircraft_categories` (`name`, `label`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `billing` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`identifier` varchar(255) NOT NULL,
-`sender` varchar(255) NOT NULL,
-`target_type` varchar(50) NOT NULL,
-`target` varchar(255) NOT NULL,
-`label` varchar(255) NOT NULL,
-`amount` int(11) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(255) NOT NULL,
+  `sender` varchar(255) NOT NULL,
+  `target_type` varchar(50) NOT NULL,
+  `target` varchar(255) NOT NULL,
+  `label` varchar(255) NOT NULL,
+  `amount` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -247,11 +247,11 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `boats` (
-`name` varchar(60) NOT NULL,
-`model` varchar(60) NOT NULL,
-`price` int(11) NOT NULL,
-`category` varchar(60) DEFAULT NULL,
-PRIMARY KEY (`model`)
+  `name` varchar(60) NOT NULL,
+  `model` varchar(60) NOT NULL,
+  `price` int(11) NOT NULL,
+  `category` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -283,9 +283,9 @@ INSERT INTO `boats` (`name`, `model`, `price`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `boat_categories` (
-`name` varchar(60) NOT NULL,
-`label` varchar(60) NOT NULL,
-PRIMARY KEY (`name`)
+  `name` varchar(60) NOT NULL,
+  `label` varchar(60) NOT NULL,
+  PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -303,10 +303,10 @@ INSERT INTO `boat_categories` (`name`, `label`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `cardealer_vehicles` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`vehicle` varchar(255) NOT NULL,
-`price` int(11) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `vehicle` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -316,14 +316,14 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `characters` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`identifier` varchar(255) NOT NULL,
-`firstname` varchar(255) NOT NULL,
-`lastname` varchar(255) NOT NULL,
-`dateofbirth` varchar(255) NOT NULL,
-`sex` varchar(1) NOT NULL DEFAULT 'M',
-`height` varchar(128) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `dateofbirth` varchar(255) NOT NULL,
+  `sex` varchar(1) NOT NULL DEFAULT 'M',
+  `height` varchar(128) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -333,10 +333,10 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `datastore` (
-`name` varchar(60) NOT NULL,
-`label` varchar(100) NOT NULL,
-`shared` int(11) NOT NULL,
-PRIMARY KEY (`name`)
+  `name` varchar(60) NOT NULL,
+  `label` varchar(100) NOT NULL,
+  `shared` int(11) NOT NULL,
+  PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -366,13 +366,13 @@ INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `datastore_data` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`name` varchar(60) NOT NULL,
-`owner` varchar(60) DEFAULT NULL,
-`data` longtext,
-PRIMARY KEY (`id`),
-UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
-KEY `index_datastore_data_name` (`name`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
+  `owner` varchar(60) DEFAULT NULL,
+  `data` longtext,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
+  KEY `index_datastore_data_name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -401,12 +401,12 @@ INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `dock` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`name` varchar(60) NOT NULL,
-`model` varchar(60) NOT NULL,
-`price` int(11) NOT NULL,
-`category` varchar(60) DEFAULT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
+  `model` varchar(60) NOT NULL,
+  `price` int(11) NOT NULL,
+  `category` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -436,10 +436,10 @@ INSERT INTO `dock` (`id`, `name`, `model`, `price`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `dock_categories` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`name` varchar(60) NOT NULL,
-`label` varchar(60) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
+  `label` varchar(60) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -456,10 +456,10 @@ INSERT INTO `dock_categories` (`id`, `name`, `label`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `dock_vehicles` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`vehicle` varchar(255) NOT NULL,
-`price` int(11) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `vehicle` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -469,11 +469,11 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `fine_types` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`label` varchar(255) DEFAULT NULL,
-`amount` int(11) DEFAULT NULL,
-`category` int(11) DEFAULT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `label` varchar(255) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `category` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -541,11 +541,11 @@ INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `fine_types_gang` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`label` varchar(255) DEFAULT NULL,
-`amount` int(11) DEFAULT NULL,
-`category` int(11) DEFAULT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `label` varchar(255) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `category` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -568,11 +568,11 @@ INSERT INTO `fine_types_gang` (`id`, `label`, `amount`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `fine_types_hitman` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`label` varchar(255) DEFAULT NULL,
-`amount` int(11) DEFAULT NULL,
-`category` int(11) DEFAULT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `label` varchar(255) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `category` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -589,11 +589,11 @@ INSERT INTO `fine_types_hitman` (`id`, `label`, `amount`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `fine_types_thelostmc` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`label` varchar(255) DEFAULT NULL,
-`amount` int(11) DEFAULT NULL,
-`category` int(11) DEFAULT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `label` varchar(255) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `category` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -616,9 +616,9 @@ INSERT INTO `fine_types_thelostmc` (`id`, `label`, `amount`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `hungerthirst` (
-`idSteam` varchar(255) NOT NULL,
-`hunger` int(11) NOT NULL DEFAULT '100',
-`thirst` int(11) NOT NULL DEFAULT '100'
+  `idSteam` varchar(255) NOT NULL,
+  `hunger` int(11) NOT NULL DEFAULT '100',
+  `thirst` int(11) NOT NULL DEFAULT '100'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -628,12 +628,12 @@ CREATE TABLE IF NOT EXISTS `hungerthirst` (
 --
 
 CREATE TABLE IF NOT EXISTS `items` (
-`name` varchar(50) COLLATE utf8_bin NOT NULL,
-`label` varchar(255) COLLATE utf8_bin NOT NULL,
-`limit` int(11) NOT NULL DEFAULT '-1',
-`rare` int(11) NOT NULL DEFAULT '0',
-`can_remove` int(11) NOT NULL DEFAULT '1',
-PRIMARY KEY (`name`)
+  `name` varchar(50) COLLATE utf8_bin NOT NULL,
+  `label` varchar(255) COLLATE utf8_bin NOT NULL,
+  `limit` int(11) NOT NULL DEFAULT '-1',
+  `rare` int(11) NOT NULL DEFAULT '0',
+  `can_remove` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -705,7 +705,7 @@ INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
 ('phone', 'Phone', 1, 0, 1),
 ('plongee1', 'Short Dive', -1, 0, 1),
 ('plongee2', 'Long Dive', -1, 0, 1),
-('repairkit', 'Repair Kit', 3, 0, 1),
+('repairkit', 'Repairkit', 3, 0, 1),
 ('rhum', 'Rum', 5, 0, 1),
 ('rhumcoca', 'Rum & Coke', 5, 0, 1),
 ('rhumfruit', 'Rum & Fruit Juice', 5, 0, 1),
@@ -740,10 +740,10 @@ INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `jobs` (
-`name` varchar(50) COLLATE utf8_bin NOT NULL,
-`label` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-`whitelisted` tinyint(1) NOT NULL DEFAULT '0',
-PRIMARY KEY (`name`)
+  `name` varchar(50) COLLATE utf8_bin NOT NULL,
+  `label` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `whitelisted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -753,23 +753,23 @@ PRIMARY KEY (`name`)
 INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 ('airlines', 'Airlines', 0),
 ('ambulance', 'Medical Technician', 0),
-('army', 'Army', 1),
+('army', 'Army', 0),
 ('banker', 'Banker', 0),
 ('cardealer', 'Car Dealer', 0),
 ('dock', 'Marina', 0),
-('fbi', 'FBI', 1),
+('fbi', 'FBI', 0),
 ('fire', 'LSFD', 0),
 ('fisherman', 'Fisherman', 0),
 ('fueler', 'Fueler', 0),
 ('gang', 'Gang', 1),
 ('heli', 'Heli Pilot', 0),
-('hitman', 'Hitman', 1),
+('hitman', 'Hitman', 0),
 ('lumberjack', 'Lumberjack', 0),
 ('mafia', 'Mafia', 0),
-('mechanic', 'Mechanic', 1),
+('mechanic', 'Mechanic', 0),
 ('miner', 'Miner', 0),
 ('nightclub', 'Nightclub', 0),
-('police', 'LSPD', 1),
+('police', 'LSPD', 0),
 ('realestateagent', 'Realestate Agent', 0),
 ('reporter', 'Journalist', 0),
 ('slaughterer', 'Butcher', 0),
@@ -786,15 +786,15 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `job_grades` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`job_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-`grade` int(11) NOT NULL,
-`name` varchar(255) COLLATE utf8_bin NOT NULL,
-`label` varchar(255) COLLATE utf8_bin NOT NULL,
-`salary` int(11) NOT NULL,
-`skin_male` longtext COLLATE utf8_bin NOT NULL,
-`skin_female` longtext COLLATE utf8_bin NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `job_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `grade` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `label` varchar(255) COLLATE utf8_bin NOT NULL,
+  `salary` int(11) NOT NULL,
+  `skin_male` longtext COLLATE utf8_bin NOT NULL,
+  `skin_female` longtext COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -926,9 +926,9 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 --
 
 CREATE TABLE IF NOT EXISTS `licenses` (
-`type` varchar(60) NOT NULL,
-`label` varchar(60) NOT NULL,
-PRIMARY KEY (`type`)
+  `type` varchar(60) NOT NULL,
+  `label` varchar(60) NOT NULL,
+  PRIMARY KEY (`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -952,44 +952,44 @@ INSERT INTO `licenses` (`type`, `label`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `outfits` (
-`idSteam` varchar(255) NOT NULL,
-`dad` int(11) NOT NULL DEFAULT '0',
-`mum` int(11) NOT NULL DEFAULT '0',
-`dadmumpercent` int(11) NOT NULL DEFAULT '0',
-`skinton` int(11) NOT NULL DEFAULT '0',
-`eyecolor` int(11) NOT NULL DEFAULT '0',
-`acne` int(11) NOT NULL DEFAULT '0',
-`skinproblem` int(11) NOT NULL DEFAULT '0',
-`freckle` int(11) NOT NULL DEFAULT '0',
-`wrinkle` int(11) NOT NULL DEFAULT '0',
-`wrinkleopacity` int(11) NOT NULL DEFAULT '0',
-`eyebrow` int(11) NOT NULL DEFAULT '0',
-`eyebrowopacity` int(11) NOT NULL DEFAULT '0',
-`beard` int(11) NOT NULL DEFAULT '0',
-`beardopacity` int(11) NOT NULL DEFAULT '0',
-`beardcolor` int(11) NOT NULL DEFAULT '0',
-`hair` int(11) NOT NULL DEFAULT '0',
-`hairtext` int(11) NOT NULL DEFAULT '0',
-`torso` int(11) NOT NULL DEFAULT '0',
-`torsotext` int(11) NOT NULL DEFAULT '0',
-`leg` int(11) NOT NULL DEFAULT '0',
-`legtext` int(11) NOT NULL DEFAULT '0',
-`shoes` int(11) NOT NULL DEFAULT '0',
-`shoestext` int(11) NOT NULL DEFAULT '0',
-`accessory` int(11) NOT NULL DEFAULT '0',
-`accessorytext` int(11) NOT NULL DEFAULT '0',
-`undershirt` int(11) NOT NULL DEFAULT '0',
-`undershirttext` int(11) NOT NULL DEFAULT '0',
-`torso2` int(11) NOT NULL DEFAULT '0',
-`torso2text` int(11) NOT NULL DEFAULT '0',
-`prop_hat` int(11) NOT NULL DEFAULT '0',
-`prop_hat_text` int(11) NOT NULL DEFAULT '0',
-`prop_glasses` int(11) NOT NULL DEFAULT '0',
-`prop_glasses_text` int(11) NOT NULL DEFAULT '0',
-`prop_earrings` int(11) NOT NULL DEFAULT '0',
-`prop_earrings_text` int(11) NOT NULL DEFAULT '0',
-`prop_watches` int(11) NOT NULL DEFAULT '0',
-`prop_watches_text` int(11) NOT NULL DEFAULT '0'
+  `idSteam` varchar(255) NOT NULL,
+  `dad` int(11) NOT NULL DEFAULT '0',
+  `mum` int(11) NOT NULL DEFAULT '0',
+  `dadmumpercent` int(11) NOT NULL DEFAULT '0',
+  `skinton` int(11) NOT NULL DEFAULT '0',
+  `eyecolor` int(11) NOT NULL DEFAULT '0',
+  `acne` int(11) NOT NULL DEFAULT '0',
+  `skinproblem` int(11) NOT NULL DEFAULT '0',
+  `freckle` int(11) NOT NULL DEFAULT '0',
+  `wrinkle` int(11) NOT NULL DEFAULT '0',
+  `wrinkleopacity` int(11) NOT NULL DEFAULT '0',
+  `eyebrow` int(11) NOT NULL DEFAULT '0',
+  `eyebrowopacity` int(11) NOT NULL DEFAULT '0',
+  `beard` int(11) NOT NULL DEFAULT '0',
+  `beardopacity` int(11) NOT NULL DEFAULT '0',
+  `beardcolor` int(11) NOT NULL DEFAULT '0',
+  `hair` int(11) NOT NULL DEFAULT '0',
+  `hairtext` int(11) NOT NULL DEFAULT '0',
+  `torso` int(11) NOT NULL DEFAULT '0',
+  `torsotext` int(11) NOT NULL DEFAULT '0',
+  `leg` int(11) NOT NULL DEFAULT '0',
+  `legtext` int(11) NOT NULL DEFAULT '0',
+  `shoes` int(11) NOT NULL DEFAULT '0',
+  `shoestext` int(11) NOT NULL DEFAULT '0',
+  `accessory` int(11) NOT NULL DEFAULT '0',
+  `accessorytext` int(11) NOT NULL DEFAULT '0',
+  `undershirt` int(11) NOT NULL DEFAULT '0',
+  `undershirttext` int(11) NOT NULL DEFAULT '0',
+  `torso2` int(11) NOT NULL DEFAULT '0',
+  `torso2text` int(11) NOT NULL DEFAULT '0',
+  `prop_hat` int(11) NOT NULL DEFAULT '0',
+  `prop_hat_text` int(11) NOT NULL DEFAULT '0',
+  `prop_glasses` int(11) NOT NULL DEFAULT '0',
+  `prop_glasses_text` int(11) NOT NULL DEFAULT '0',
+  `prop_earrings` int(11) NOT NULL DEFAULT '0',
+  `prop_earrings_text` int(11) NOT NULL DEFAULT '0',
+  `prop_watches` int(11) NOT NULL DEFAULT '0',
+  `prop_watches_text` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -999,10 +999,10 @@ CREATE TABLE IF NOT EXISTS `outfits` (
 --
 
 CREATE TABLE IF NOT EXISTS `owned_dock` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`vehicle` longtext NOT NULL,
-`owner` varchar(60) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `vehicle` longtext NOT NULL,
+  `owner` varchar(60) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1012,12 +1012,12 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `owned_properties` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`name` varchar(255) NOT NULL,
-`price` double NOT NULL,
-`rented` int(11) NOT NULL,
-`owner` varchar(60) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `price` double NOT NULL,
+  `rented` int(11) NOT NULL,
+  `owner` varchar(60) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1027,13 +1027,13 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `owned_vehicles` (
-`owner` varchar(22) NOT NULL,
-`plate` varchar(12) NOT NULL,
-`vehicle` longtext,
-`type` varchar(20) NOT NULL DEFAULT 'car',
-`job` varchar(20) NOT NULL DEFAULT '',
-`stored` tinyint(1) NOT NULL DEFAULT '0',
-PRIMARY KEY (`plate`)
+  `owner` varchar(22) NOT NULL,
+  `plate` varchar(12) NOT NULL,
+  `vehicle` longtext,
+  `type` varchar(20) NOT NULL DEFAULT 'car',
+  `job` varchar(20) NOT NULL DEFAULT '',
+  `stored` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1043,10 +1043,10 @@ PRIMARY KEY (`plate`)
 --
 
 CREATE TABLE IF NOT EXISTS `owner_vehicles` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`vehicle` varchar(255) NOT NULL,
-`price` int(11) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `vehicle` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1056,21 +1056,21 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `properties` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`name` varchar(255) DEFAULT NULL,
-`label` varchar(255) DEFAULT NULL,
-`entering` varchar(255) DEFAULT NULL,
-`exit` varchar(255) DEFAULT NULL,
-`inside` varchar(255) DEFAULT NULL,
-`outside` varchar(255) DEFAULT NULL,
-`ipls` varchar(255) DEFAULT '[]',
-`gateway` varchar(255) DEFAULT NULL,
-`is_single` int(11) DEFAULT NULL,
-`is_room` int(11) DEFAULT NULL,
-`is_gateway` int(11) DEFAULT NULL,
-`room_menu` varchar(255) DEFAULT NULL,
-`price` int(11) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `label` varchar(255) DEFAULT NULL,
+  `entering` varchar(255) DEFAULT NULL,
+  `exit` varchar(255) DEFAULT NULL,
+  `inside` varchar(255) DEFAULT NULL,
+  `outside` varchar(255) DEFAULT NULL,
+  `ipls` varchar(255) DEFAULT '[]',
+  `gateway` varchar(255) DEFAULT NULL,
+  `is_single` int(11) DEFAULT NULL,
+  `is_room` int(11) DEFAULT NULL,
+  `is_gateway` int(11) DEFAULT NULL,
+  `room_menu` varchar(255) DEFAULT NULL,
+  `price` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1138,14 +1138,14 @@ INSERT INTO `properties` (`id`, `name`, `label`, `entering`, `exit`, `inside`, `
 --
 
 CREATE TABLE IF NOT EXISTS `rented_dock` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`vehicle` varchar(60) NOT NULL,
-`plate` varchar(10) NOT NULL,
-`player_name` varchar(255) NOT NULL,
-`base_price` int(11) NOT NULL,
-`rent_price` int(11) NOT NULL,
-`owner` varchar(255) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `vehicle` varchar(60) NOT NULL,
+  `plate` varchar(10) NOT NULL,
+  `player_name` varchar(255) NOT NULL,
+  `base_price` int(11) NOT NULL,
+  `rent_price` int(11) NOT NULL,
+  `owner` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1155,13 +1155,13 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `rented_vehicles` (
-`vehicle` varchar(60) NOT NULL,
-`plate` varchar(12) NOT NULL,
-`player_name` varchar(255) NOT NULL,
-`base_price` int(11) NOT NULL,
-`rent_price` int(11) NOT NULL,
-`owner` varchar(22) NOT NULL,
-PRIMARY KEY (`plate`)
+  `vehicle` varchar(60) NOT NULL,
+  `plate` varchar(12) NOT NULL,
+  `player_name` varchar(255) NOT NULL,
+  `base_price` int(11) NOT NULL,
+  `rent_price` int(11) NOT NULL,
+  `owner` varchar(22) NOT NULL,
+  PRIMARY KEY (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1171,11 +1171,11 @@ PRIMARY KEY (`plate`)
 --
 
 CREATE TABLE IF NOT EXISTS `shops` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`store` varchar(100) NOT NULL,
-`item` varchar(100) NOT NULL,
-`price` int(11) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `store` varchar(100) NOT NULL,
+  `item` varchar(100) NOT NULL,
+  `price` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1185,59 +1185,49 @@ PRIMARY KEY (`id`)
 INSERT INTO `shops` (`id`, `store`, `item`, `price`) VALUES
 (1, 'TwentyFourSeven', 'bread', 30),
 (2, 'TwentyFourSeven', 'water', 15),
+(3, 'RobsLiquor', 'bread', 30),
+(4, 'RobsLiquor', 'water', 15),
+(5, 'LTDgasoline', 'bread', 30),
+(6, 'LTDgasoline', 'water', 15),
 (7, 'TwentyFourSeven', 'chocolate', 10),
+(8, 'RobsLiquor', 'chocolate', 10),
+(9, 'LTDgasoline', 'chocolate', 10),
 (10, 'TwentyFourSeven', 'sandwich', 10),
+(11, 'RobsLiquor', 'sandwich', 10),
+(12, 'LTDgasoline', 'sandwich', 10),
 (13, 'TwentyFourSeven', 'hamburger', 15),
+(14, 'RobsLiquor', 'hamburger', 15),
+(15, 'LTDgasoline', 'hamburger', 15),
 (16, 'TwentyFourSeven', 'cupcake', 10),
+(17, 'RobsLiquor', 'cupcake', 10),
+(18, 'LTDgasoline', 'cupcake', 10),
 (19, 'TwentyFourSeven', 'chips', 15),
+(20, 'RobsLiquor', 'chips', 15),
+(21, 'LTDgasoline', 'chips', 15),
 (22, 'TwentyFourSeven', 'cocacola', 15),
+(23, 'RobsLiquor', 'cocacola', 15),
+(24, 'LTDgasoline', 'cocacola', 15),
 (25, 'TwentyFourSeven', 'icetea', 10),
+(26, 'RobsLiquor', 'icetea', 10),
+(27, 'LTDgasoline', 'icetea', 10),
 (28, 'TwentyFourSeven', 'coffe', 10),
+(29, 'RobsLiquor', 'coffe', 10),
+(30, 'LTDgasoline', 'coffe', 10),
 (31, 'TwentyFourSeven', 'milk', 15),
+(32, 'RobsLiquor', 'milk', 15),
+(33, 'LTDgasoline', 'milk', 15),
+(34, 'RobsLiquor', 'cigarett', 15),
+(35, 'RobsLiquor', 'lighter', 10),
+(36, 'LTDgasoline', 'cigarett', 15),
+(37, 'LTDgasoline', 'lighter', 10),
 (38, 'TwentyFourSeven', 'cigarett', 15),
 (39, 'TwentyFourSeven', 'lighter', 10),
 (40, 'TwentyFourSeven', 'jumelles', 1000),
-(43, 'TwentyFourSeven', 'phone', 750),
-(64, 'TwentyFourSeven', 'plongee1', 250),
-(65, 'TwentyFourSeven', 'plongee2', 350),
-
-(3, 'RobsLiquor', 'bread', 30),
-(4, 'RobsLiquor', 'water', 15),
-(8, 'RobsLiquor', 'chocolate', 10),
-(11, 'RobsLiquor', 'sandwich', 10),
-(14, 'RobsLiquor', 'hamburger', 15),
-(17, 'RobsLiquor', 'cupcake', 10),
-(20, 'RobsLiquor', 'chips', 15),
-(23, 'RobsLiquor', 'cocacola', 15),
-(26, 'RobsLiquor', 'icetea', 10),
-(29, 'RobsLiquor', 'coffe', 10),
-(32, 'RobsLiquor', 'milk', 15),
-(34, 'RobsLiquor', 'cigarett', 15),
-(35, 'RobsLiquor', 'lighter', 10),
 (41, 'RobsLiquor', 'jumelles', 1000),
-(44, 'RobsLiquor', 'phone', 750),
-(66, 'RobsLiquor', 'plongee1', 250),
-(67, 'RobsLiquor', 'plongee2', 350),
-
-(5, 'LTDgasoline', 'bread', 30),
-(6, 'LTDgasoline', 'water', 15),
-(9, 'LTDgasoline', 'chocolate', 10),
-(12, 'LTDgasoline', 'sandwich', 10),
-(15, 'LTDgasoline', 'hamburger', 15),
-(18, 'LTDgasoline', 'cupcake', 10),
-(21, 'LTDgasoline', 'chips', 15),
-(24, 'LTDgasoline', 'cocacola', 15),
-(27, 'LTDgasoline', 'icetea', 10),
-(30, 'LTDgasoline', 'coffe', 10),
-(33, 'LTDgasoline', 'milk', 15),
-(36, 'LTDgasoline', 'cigarett', 15),
-(37, 'LTDgasoline', 'lighter', 10),
 (42, 'LTDgasoline', 'jumelles', 1000),
+(43, 'TwentyFourSeven', 'phone', 750),
+(44, 'RobsLiquor', 'phone', 750),
 (45, 'LTDgasoline', 'phone', 750),
-(63, 'LTDgasoline', 'repairkit', 1500)
-(68, 'LTDgasoline', 'plongee1', 250),
-(69, 'LTDgasoline', 'plongee2', 350),
-
 (46, 'Bar', 'beer', 30),
 (47, 'Bar', 'wine', 25),
 (48, 'Bar', 'vodka', 60),
@@ -1245,7 +1235,6 @@ INSERT INTO `shops` (`id`, `store`, `item`, `price`) VALUES
 (50, 'Bar', 'whisky', 50),
 (51, 'Bar', 'cigarett', 30),
 (52, 'Bar', 'lighter', 25),
-
 (53, 'Disco', 'beer', 30),
 (54, 'Disco', 'wine', 25),
 (55, 'Disco', 'vodka', 60),
@@ -1257,11 +1246,6 @@ INSERT INTO `shops` (`id`, `store`, `item`, `price`) VALUES
 (61, 'Disco', 'cigarett', 30),
 (62, 'Disco', 'lighter', 25);
 
-
-
-
-
-
 -- --------------------------------------------------------
 
 --
@@ -1269,11 +1253,11 @@ INSERT INTO `shops` (`id`, `store`, `item`, `price`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `society_moneywash` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`identifier` varchar(60) NOT NULL,
-`society` varchar(60) NOT NULL,
-`amount` int(11) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(60) NOT NULL,
+  `society` varchar(60) NOT NULL,
+  `amount` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1283,11 +1267,11 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `trucks` (
-`name` varchar(60) NOT NULL,
-`model` varchar(60) NOT NULL,
-`price` int(11) NOT NULL,
-`category` varchar(60) DEFAULT NULL,
-PRIMARY KEY (`model`)
+  `name` varchar(60) NOT NULL,
+  `model` varchar(60) NOT NULL,
+  `price` int(11) NOT NULL,
+  `category` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1331,9 +1315,9 @@ INSERT INTO `trucks` (`name`, `model`, `price`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `truck_categories` (
-`name` varchar(60) NOT NULL,
-`label` varchar(60) NOT NULL,
-PRIMARY KEY (`name`)
+  `name` varchar(60) NOT NULL,
+  `label` varchar(60) NOT NULL,
+  PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1353,12 +1337,12 @@ INSERT INTO `truck_categories` (`name`, `label`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `trunk_inventory` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`plate` varchar(8) NOT NULL,
-`data` text NOT NULL,
-`owned` int(11) NOT NULL,
-PRIMARY KEY (`id`),
-UNIQUE KEY `plate` (`plate`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `plate` varchar(8) NOT NULL,
+  `data` text NOT NULL,
+  `owned` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `plate` (`plate`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1375,31 +1359,31 @@ INSERT INTO `trunk_inventory` (`id`, `plate`, `data`, `owned`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`identifier` varchar(50) COLLATE utf8mb4_bin NOT NULL,
-`license` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
-`money` int(11) DEFAULT NULL,
-`name` varchar(255) COLLATE utf8mb4_bin DEFAULT '',
-`skin` longtext COLLATE utf8mb4_bin,
-`job` varchar(255) COLLATE utf8mb4_bin DEFAULT 'unemployed',
-`job_grade` int(11) DEFAULT '0',
-`loadout` longtext COLLATE utf8mb4_bin,
-`position` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
-`bank` int(11) DEFAULT NULL,
-`permission_level` int(11) DEFAULT NULL,
-`group` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
-`last_property` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
-`status` longtext COLLATE utf8mb4_bin,
-`phone_number` int(11) DEFAULT NULL,
-`is_dead` tinyint(1) DEFAULT '0',
-`firstname` varchar(50) COLLATE utf8mb4_bin DEFAULT '',
-`lastname` varchar(50) COLLATE utf8mb4_bin DEFAULT '',
-`dateofbirth` varchar(25) COLLATE utf8mb4_bin DEFAULT '',
-`sex` varchar(10) COLLATE utf8mb4_bin DEFAULT '',
-`height` varchar(5) COLLATE utf8mb4_bin DEFAULT '',
-`pet` varchar(50) COLLATE utf8mb4_bin NOT NULL,
-PRIMARY KEY (`id`),
-UNIQUE KEY `index_users_phone_number` (`phone_number`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(50) COLLATE utf8mb4_bin NOT NULL,
+  `license` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `money` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_bin DEFAULT '',
+  `skin` longtext COLLATE utf8mb4_bin,
+  `job` varchar(255) COLLATE utf8mb4_bin DEFAULT 'unemployed',
+  `job_grade` int(11) DEFAULT '0',
+  `loadout` longtext COLLATE utf8mb4_bin,
+  `position` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `bank` int(11) DEFAULT NULL,
+  `permission_level` int(11) DEFAULT NULL,
+  `group` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `last_property` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `status` longtext COLLATE utf8mb4_bin,
+  `phone_number` int(11) DEFAULT NULL,
+  `is_dead` tinyint(1) DEFAULT '0',
+  `firstname` varchar(50) COLLATE utf8mb4_bin DEFAULT '',
+  `lastname` varchar(50) COLLATE utf8mb4_bin DEFAULT '',
+  `dateofbirth` varchar(25) COLLATE utf8mb4_bin DEFAULT '',
+  `sex` varchar(10) COLLATE utf8mb4_bin DEFAULT '',
+  `height` varchar(5) COLLATE utf8mb4_bin DEFAULT '',
+  `pet` varchar(50) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_users_phone_number` (`phone_number`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
@@ -1409,11 +1393,11 @@ UNIQUE KEY `index_users_phone_number` (`phone_number`)
 --
 
 CREATE TABLE IF NOT EXISTS `user_accounts` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`identifier` varchar(255) COLLATE utf8_bin NOT NULL,
-`name` varchar(255) COLLATE utf8_bin NOT NULL,
-`money` double NOT NULL DEFAULT '0',
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(255) COLLATE utf8_bin NOT NULL,
+  `name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `money` double NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -1423,12 +1407,12 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `user_contacts` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`identifier` varchar(22) NOT NULL,
-`name` varchar(100) NOT NULL,
-`number` int(11) NOT NULL,
-PRIMARY KEY (`id`),
-KEY `index_user_contacts_identifier_name_number` (`identifier`,`name`,`number`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(22) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `number` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_user_contacts_identifier_name_number` (`identifier`,`name`,`number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1438,12 +1422,12 @@ KEY `index_user_contacts_identifier_name_number` (`identifier`,`name`,`number`)
 --
 
 CREATE TABLE IF NOT EXISTS `user_inventory` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`identifier` varchar(255) COLLATE utf8_bin NOT NULL,
-`item` varchar(255) COLLATE utf8_bin NOT NULL,
-`count` int(11) NOT NULL,
-PRIMARY KEY (`id`),
-KEY `user_inventory_ident_item` (`identifier`,`item`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(255) COLLATE utf8_bin NOT NULL,
+  `item` varchar(255) COLLATE utf8_bin NOT NULL,
+  `count` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_inventory_ident_item` (`identifier`,`item`)
 ) ENGINE=InnoDB AUTO_INCREMENT=244 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -1453,8 +1437,8 @@ KEY `user_inventory_ident_item` (`identifier`,`item`)
 --
 
 CREATE TABLE IF NOT EXISTS `user_lastcharacter` (
-`steamid` varchar(255) NOT NULL,
-`charid` int(11) NOT NULL
+  `steamid` varchar(255) NOT NULL,
+  `charid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -1464,10 +1448,10 @@ CREATE TABLE IF NOT EXISTS `user_lastcharacter` (
 --
 
 CREATE TABLE IF NOT EXISTS `user_licenses` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`type` varchar(60) NOT NULL,
-`owner` varchar(60) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(60) NOT NULL,
+  `owner` varchar(60) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1477,476 +1461,275 @@ PRIMARY KEY (`id`)
 --
 
 CREATE TABLE IF NOT EXISTS `user_parkings` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`identifier` varchar(60) DEFAULT NULL,
-`garage` varchar(60) DEFAULT NULL,
-`zone` int(11) NOT NULL,
-`vehicle` longtext,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(60) DEFAULT NULL,
+  `garage` varchar(60) DEFAULT NULL,
+  `zone` int(11) NOT NULL,
+  `vehicle` longtext,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8mb4;
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicles`
+--
+
+CREATE TABLE IF NOT EXISTS `vehicles` (
+  `name` varchar(60) NOT NULL,
+  `model` varchar(60) NOT NULL,
+  `price` int(11) NOT NULL,
+  `category` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`model`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `vehicles`
 --
 
 INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
-
-# Compacts
-
-
-# Coupes
-('Blista', 'BLISTA', 25000, 'coupes'),
-('Brioso R/A', 'BRIOSO', 25000, 'coupes'),
-('Dilettante', 'DILETTANTE', 25000, 'coupes'),
-('Dilettante II', 'DILETTANTE2', 25000, 'coupes'),
-('Issi II', 'ISSI2', 25000, 'coupes'),
-('Issi Classic', 'ISSI3', 25000, 'coupes'),
-('Issi Apocalypse', 'ISSI4', 25000, 'coupes'),
-('Issi Future Shock', 'ISSI5', 25000, 'coupes'),
-('Issi Nightmare', 'ISSI6', 25000, 'coupes'),
-('Panto', 'PANTO', 25000, 'coupes'),
-('Prairie', 'PRAIRIE', 25000, 'coupes'),
-('Rhapsody', 'RHAPSODY', 25000, 'coupes'),
-
-# Sedans
-('Asea', 'ASEA', 25000, 'sedans'),
-('Asea II', 'ASEA2', 25000, 'sedans'),
-('Asterope', 'ASTEROPE', 25000, 'sedans'),
-('Cognoscenti 55', 'COG55', 25000, 'sedans'),
-('Cognoscenti 55 (Armored)', 'COG552ƒ', 25000, 'sedans'),
-('Cognoscenti', 'COGNOSCENTI', 25000, 'sedans'),
-('Cognoscenti (Armored)', 'COGNOSCENTI2', 25000, 'sedans'),
-('Emperor', 'EMPEROR', 25000, 'sedans'),
-('Emperor II', 'EMPEROR2', 25000, 'sedans'),
-('Emperor III', 'EMPEROR3', 25000, 'sedans'),
-('Fugative', 'FUGITIVE', 25000, 'sedans'),
-('Glendale', 'GLENDALE', 25000, 'sedans'),
-('Ingot', 'INGOT', 25000, 'sedans'),
-('Intruder', 'INTRUDER', 25000, 'sedans'),
-('Turreted Limo', 'LIMO2', 25000, 'sedans'),
-('Premier', 'PREMIER', 25000, 'sedans'),
-('Primo', 'PRIMO', 25000, 'sedans'),
-('Primo Custom', 'PRIMO2', 25000, 'sedans'),
-('Regina', 'REGINA', 25000, 'sedans'),
-('Romero Hearse', 'ROMERO', 25000, 'sedans'),
-('Schafter LWB (Armored)', 'SCHAFTER6', 25000, 'sedans'),
-('Stafford', 'STAFFORD', 25000, 'sedans'),
-('Stanier', 'STANIER', 25000, 'sedans'),
-('Stratum', 'STRATUM', 25000, 'sedans'),
-('Stretch', 'STRETCH', 25000, 'sedans'),
-('Super Diamond', 'SUPERD', 25000, 'sedans'),
-('Surge', 'SURGE', 25000, 'sedans'),
-('Tailgater', 'TAILGATER', 25000, 'sedans'),
-('Warrener', 'WARRENER', 25000, 'sedans'),
-('Washington', 'WASHINGTON', 25000, 'sedans'),
-
-# SUV
-('Baller', 'BALLER', 25000, 'suvs'),
-('Baller II', 'BALLER2', 25000, 'suvs'),
-('Baller LE', 'BALLER3', 25000, 'suvs'),
-('Baller LE LWB', 'BALLER4', 25000, 'suvs'),
-('Baller LE (Armored)', 'BALLER5', 25000, 'suvs'),
-('Baller LE LWB (Armored)', 'BALLER6', 25000, 'suvs'),
-('BeeJay XL', 'BJXL', 25000, 'suvs'),
-('Cavalcade', 'CAVALCADE', 25000, 'suvs'),
-('Cavalcade II', 'CAVALCADE2', 25000, 'suvs'),
-('Contender', 'CONTENDER', 25000, 'suvs'),
-('Dubsta', 'DUBSTA', 25000, 'suvs'),
-('Dubsta II', 'DUBSTA2', 25000, 'suvs'),
-('FQ 2', 'FQ2', 25000, 'suvs'),
-('Granger', 'GRANGER', 25000, 'suvs'),
-('Gresley', 'GRESLEY', 25000, 'suvs'),
-('Habanero', 'HABANERO', 25000, 'suvs'),
-('Huntley S', 'HUNTLEY', 25000, 'suvs'),
-('Landstalker', 'LANDSTALKER', 25000, 'suvs'),
-('Mesa', 'MESA', 25000, 'suvs'),
-('Mesa II', 'MESA2', 25000, 'suvs'),
-('Patriot', 'PATRIOT', 25000, 'suvs'),
-('Patriot Stretch', 'PATRIOT2', 25000, 'suvs'),
-('Radius', 'RADI', 25000, 'suvs'),
-('Rocoto', 'ROCOTO', 25000, 'suvs'),
-('Seminhole', 'SEMINOLE', 25000, 'suvs'),
-('Serrano', 'SERRANO', 25000, 'suvs'),
-('Toros', 'TOROS', 25000, 'suvs'),
-('XLS', 'XLS', 25000, 'suvs'),
-('XLS (Armored)', 'XLS2', 25000, 'suvs'),
-
-
-#Coupes
-('Cognoscenti Cabrio', 'COGCABRIO', 25000, 'coupes'),
-('Exemplar', 'EXEMPLAR', 25000, 'coupes'),
-('F620', 'F620', 25000, 'coupes'),
-('Felon', 'FELON', 25000, 'coupes'),
-('Felon GT', 'FELON2', 25000, 'coupes'),
-('Jackal', 'JACKAL', 25000, 'coupes'),
-('Oracle XS', 'ORACLE', 25000, 'coupes'),
-('Oracle', 'ORACLE2', 25000, 'coupes'),
-('Sentinel XS', 'SENTINEL', 25000, 'coupes'),
-('Sentinel', 'SENTINEL2', 25000, 'coupes'),
-('Windsor', 'WINDSOR', 25000, 'coupes'),
-('Windsor Drop', 'WINDSOR2', 25000, 'coupes'),
-('Zion', 'ZION', 25000, 'coupes'),
-('Zion Cabrio', 'ZION2', 25000, 'coupes'),
-
-# Muscle
-('Blade', 'BLADE', 25000, 'muscle'),
-('Buccaneer', 'BUCCANEER', 25000, 'muscle'),
-('Buccaneer Custom', 'BUCCANEER2', 25000, 'muscle'),
-('Chino', 'CHINO', 25000, 'muscle'),
-('Chino Custom', 'CHINO2', 25000, 'muscle'),
-('Clique', 'CLIQUE', 25000, 'muscle'),
-('Coquette BlackFin', 'COQUETTE3', 25000, 'muscle'),
-('Deviant', 'DEVIANT', 25000, 'muscle'),
-('Dominator', 'DOMINATOR', 25000, 'muscle'),
-('Pisswasser Dominator', 'DOMINATOR2', 25000, 'muscle'),
-('Dominator GTX', 'DOMINATOR3', 25000, 'muscle'),
-('Dominator Apocalypse', 'DOMINATOR4', 25000, 'muscle'),
-('Dominator Future Shock', 'DOMINATOR5', 25000, 'muscle'),
-('Dominator Nightmare', 'DOMINATOR6', 25000, 'muscle'),
-('Dukes', 'DUKES', 25000, 'muscle'),
-('Dukes ODeath', 'DUKES2', 25000, 'muscle'),
-('Ellie', 'ELLIE', 25000, 'muscle'),
-('Faction', 'FACTION', 25000, 'muscle'),
-('Faction Custom', 'FACTION2', 25000, 'muscle'),
-('Faction Custom Donk', 'FACTION3', 25000, 'muscle'),
-('Gauntlet', 'GAUNTLET', 25000, 'muscle'),
-('Redwood Gaunlet', 'GAUNTLET2', 25000, 'muscle'),
-('Hermes', 'HERMES', 25000, 'muscle'),
-('HotKnife', 'HOTKNIFE', 25000, 'muscle'),
-('Hustler', 'HUSTLER', 25000, 'muscle'),
-('Impaler', 'IMPALER', 25000, 'muscle'),
-('Impaler Apocalypse', 'IMPALER2', 25000, 'muscle'),
-('Impaler Future Shock', 'IMPALER3', 25000, 'muscle'),
-('Impaler Nightmare', 'IMPALER4', 25000, 'muscle'),
-('Apocalypse Imperator', 'IMPERATOR', 25000, 'muscle'),
-('Future Shock Imperator', 'IMPERATOR2', 25000, 'muscle'),
-('Nightmare Imperator', 'IMPERATOR3', 25000, 'muscle'),
-('Lurcher', 'LURCHER', 25000, 'muscle'),
-('Moonbeam', 'MOONBEAM', 25000, 'muscle'),
-('Moonbeam Custom', 'MOONBEAM2', 25000, 'muscle'),
-('Nightshade', 'NIGHTSHADE', 25000, 'muscle'),
-('Phoenix', 'PHOENIX', 25000, 'muscle'),
-('Picador', 'PICADOR', 25000, 'muscle'),
-('Rat-Loader', 'RATLOADER', 25000, 'muscle'),
-('Rat-Truck', 'RATLOADER2', 25000, 'muscle'),
-('Ruiner', 'RUINER', 25000, 'muscle'),
-('Ruiner 2000', 'RUINER2', 25000, 'muscle'),
-('Ruiner II', 'RUINER3', 25000, 'muscle'),
-('Sabre Turbo', 'SABREGT', 25000, 'muscle'),
-('Sabrew Turbo Custom', 'SABREGT2', 25000, 'muscle'),
-('Slamvan', 'SLAMVAN', 25000, 'muscle'),
-('Lost Slamvan', 'SLAMVAN2', 25000, 'muscle'),
-('Slamvan Custom', 'SLAMVAN3', 25000, 'muscle'),
-('Apocalypse Slamvan', 'SLAMVAN4', 25000, 'muscle'),
-('Future Shock Slamvan', 'SLAMVAN5', 25000, 'muscle'),
-('Nightmare Slamvan', 'SLAMVAN6', 25000, 'muscle'),
-('Stallion', 'STALION', 25000, 'muscle'),
-('Burger Shot Stallion', 'STALION2', 25000, 'muscle'),
-('Tampa', 'TAMPA', 25000, 'muscle'),
-('Weaponized Tampa', 'TAMPA3', 25000, 'muscle'),
-('Tulip', 'TULIP', 25000, 'muscle'),
-('Vamos', 'VAMOS', 25000, 'muscle'),
-('Vigero', 'VIGERO', 25000, 'muscle'),
-('Virgo', 'VIRGO', 25000, 'muscle'),
-('Virgo Classic Custom', 'VIRGO2', 25000, 'muscle'),
-('Virgo Classic', 'VIRGO3', 25000, 'muscle'),
-('Voodoo Custom', 'VOODOO', 25000, 'muscle'),
-('Voodoo', 'VOODOO2', 25000, 'muscle'),
-('Yosemite', 'YOSEMITE', 25000, 'muscle'),
-
-# Sport CLassic
-('Ardent', 'ARDENT', 25000, 'sportsclassics'),
-('Roosevelt', 'BTYPE', 25000, 'sportsclassics'),
-('Fraken Strange', 'BTYPE2', 25000, 'sportsclassics'),
-('Roosevelt Valor', 'BTYPE3', 25000, 'sportsclassics'),
-('Casco', 'CASCO', 25000, 'sportsclassics'),
-('Cheburek', 'CHEBUREK', 25000, 'sportsclassics'),
-('Cheetah Classic', 'CHEETAH2', 25000, 'sportsclassics'),
-('Coquette Classic', 'COQUETTE2', 25000, 'sportsclassics'),
-('Deluxo', 'DELUXO', 25000, 'sportsclassics'),
-('Fagaloa', 'FAGALOA', 25000, 'sportsclassics'),
-('Stirling GT', 'FELTZER3', 25000, 'sportsclassics'),
-('GT 500', 'GT500', 25000, 'sportsclassics'),
-('Infernus Classic', 'INFERNUS2', 25000, 'sportsclassics'),
-('JB 700', 'JB700', 25000, 'sportsclassics'),
-('Jester Classic', 'JESTER3', 25000, 'sportsclassics'),
-('Mamba', 'MAMBA', 25000, 'sportsclassics'),
-('Manana', 'MANANA', 25000, 'sportsclassics'),
-('Michelli GT', 'MICHELLI', 25000, 'sportsclassics'),
-('Monroe', 'MONROE', 25000, 'sportsclassics'),
-('Peyote', 'PEYOTE', 25000, 'sportsclassics'),
-('Pigalle', 'PIGALLE', 25000, 'sportsclassics'),
-('Rapid GT Classic', 'RAPIDGT3', 25000, 'sportsclassics'),
-('Retinue', 'RETINUE', 25000, 'sportsclassics'),
-('Savestra', 'SAVESTRA', 25000, 'sportsclassics'),
-('Stinger', 'STINGER', 25000, 'sportsclassics'),
-('Stinger GT', 'STINGERGT', 25000, 'sportsclassics'),
-('Stromberg', 'STROMBERG', 25000, 'sportsclassics'),
-('Swinger', 'SWINGER', 25000, 'sportsclassics'),
-('Torero', 'TORERO', 25000, 'sportsclassics'),
-('Tornado', 'TORNADO', 25000, 'sportsclassics'),
-('Tornado II', 'TORNADO2', 25000, 'sportsclassics'),
-('Tornado III', 'TORNADO3', 25000, 'sportsclassics'),
-('Tornado IV', 'TORNADO4', 25000, 'sportsclassics'),
-('Tornado V', 'TORNADO5', 25000, 'sportsclassics'),
-('Tornado VI', 'TORNADO6', 25000, 'sportsclassics'),
-('Turismo Classic', 'TURISMO2', 25000, 'sportsclassics'),
-('Viseris', 'VISERIS', 25000, 'sportsclassics'),
-('190Z', 'Z190', 25000, 'sportsclassics'),
-('Z-Type', 'ZTYPE', 25000, 'sportsclassics'),
-
-# Sport
-('Alpha', 'ALPHA', 25000, 'sports'),
-('Banshee', 'BANSHEE', 25000, 'sports'),
-('Bestia GTS', 'BESTIAGTS', 25000, 'sports'),
-('Blista Compact', 'BLISTA2', 25000, 'sports'),
-('Go Go Monkey Blista', 'BLISTA3', 25000, 'sports'),
-('Buffalo', 'BUFFALO', 25000, 'sports'),
-('Buffalo S', 'BUFFALO2', 25000, 'sports'),
-('Sprunk Buffalo', 'BUFFALO3', 25000, 'sports'),
-('Carbonizzare', 'CARBONIZZARE', 25000, 'sports'),
-('Comet', 'COMET2', 25000, 'sports'),
-('Comet Retro Custom', 'COMET3', 25000, 'sports'),
-('Comet Safari', 'COMET4', 25000, 'sports'),
-('Comet SR', 'COMET5', 25000, 'sports'),
-('Coquette', 'COQUETTE', 25000, 'sports'),
-('Elegy Retro Custom', 'ELEGY', 25000, 'sports'),
-('Elegy RH8', 'ELEGY2', 25000, 'sports'),
-('Feltzer', 'FELTZER2', 25000, 'sports'),
-('Flash GT', 'FLASHGT', 25000, 'sports'),
-('Floure GT', 'FUROREGT', 25000, 'sports'),
-('Fusilade', 'FUSILADE', 25000, 'sports'),
-('Futo', 'FUTO', 25000, 'sports'),
-('GB200', 'GB200', 25000, 'sports'),
-('Hotring Sabre', 'HOTRING', 25000, 'sports'),
-('Itali GTO', 'ITALIGTO', 25000, 'sports'),
-('Jester', 'JESTER', 25000, 'sports'),
-('Jester (Race Car)', 'JESTER2', 25000, 'sports'),
-('Khamelion', 'KHAMELION', 25000, 'sports'),
-('Kuruma', 'KURUMA', 25000, 'sports'),
-('Kuruma (Armoured)', 'KURUMA2', 25000, 'sports'),
-('Lynx', 'LYNX', 25000, 'sports'),
-('Massacro', 'MASSACRO', 25000, 'sports'),
-('Massacro (race Car)', 'MASSACRO2', 25000, 'sports'),
-('Neon', 'NEON', 25000, 'sports'),
-('9F', 'NINEF', 25000, 'sports'),
-('9F Carbrio', 'NINEF2', 25000, 'sports'),
-('Omnis', 'OMNIS', 25000, 'sports'),
-('Pariah', 'PARIAH', 25000, 'sports'),
-('Penumbra', 'PENUMBRA', 25000, 'sports'),
-('Raiden', 'RAIDEN', 25000, 'sports'),
-('Rapid GT', 'RAPIDGT', 25000, 'sports'),
-('Rapid GT II', 'RAPIDGT2', 25000, 'sports'),
-('Raptor', 'RAPTOR', 25000, 'sports'),
-('Revolter', 'REVOLTER', 25000, 'sports'),
-('Ruston', 'RUSTON', 25000, 'sports'),
-('Schafter', 'SCHAFTER2', 25000, 'sports'),
-('Schafter V12', 'SCHAFTER3', 25000, 'sports'),
-('Schafter LWB', 'SCHAFTER4', 25000, 'sports'),
-('Schafter V12 (Armored)', 'SCHAFTER5', 25000, 'sports'),
-('Schlagen GT', 'SCHLAGEN', 25000, 'sports'),
-('Schwartzer', 'SCHWARZER', 25000, 'sports'),
-('Sentinel Classic', 'SENTINEL3', 25000, 'sports'),
-('Seven-70', 'SEVEN70', 25000, 'sports'),
-('Specter', 'SPECTER', 25000, 'sports'),
-('Specter Custom', 'SPECTER2', 25000, 'sports'),
-('Sultan', 'SULTAN', 25000, 'sports'),
-('Surano', 'SURANO', 25000, 'sports'),
-('Drift Tampa', 'TAMPA2', 25000, 'sports'),
-('Tropos Rallye', 'TROPOS', 25000, 'sports'),
-('Verlierer', 'VERLIERER2', 25000, 'sports'),
-('Apocalypse ZR380', 'ZR380', 25000, 'sports'),
-('Future Shock ZR380', 'ZR3802', 25000, 'sports'),
-('Nightmare ZR380', 'ZR3803', 25000, 'sports'),
-
-# Super
-('Adder', 'ADDER', 25000, 'super'),
-('Autarch', 'AUTARCH', 25000, 'super'),
-('Banshee 900R', 'BANSHEE2', 25000, 'super'),
-('Bullet', 'BULLET', 25000, 'super'),
-('Cheetah', 'CHEETAH', 25000, 'super'),
-('Cyclone', 'CYCLONE', 25000, 'super'),
-('Deveste', 'DEVESTE', 25000, 'super'),
-('Entity XF', 'ENTITYXF', 25000, 'super'),
-('Entity XXR', 'ENTITY2', 25000, 'super'),
-('FMJ', 'FMJ', 25000, 'super'),
-('GP1', 'GP1', 25000, 'super'),
-('Infernus', 'INFERNUS', 25000, 'super'),
-('Itali GTB', 'ITALIGTB', 25000, 'super'),
-('Itali GTB Custom', 'ITALIGTB2', 25000, 'super'),
-('RE-7B', 'LE7B', 25000, 'super'),
-('Nero', 'NERO', 25000, 'super'),
-('Nero Custom', 'NERO2', 25000, 'super'),
-('Osiris', 'OSIRIS', 25000, 'super'),
-('Penetrator', 'PENETRATOR', 25000, 'super'),
-('811', 'PFISTER811', 25000, 'super'),
-('X80 Proto', 'PROTOTIPO', 25000, 'super'),
-('Reaper', 'REAPER', 25000, 'super'),
-('SC1', 'SC1', 25000, 'super'),
-('Scramjet', 'SCRAMJET', 25000, 'super'),
-('ETR1', 'SHEAVA', 25000, 'super'),
-('Sultan RS', 'SULTANRS', 25000, 'super'),
-('T20', 'T20', 25000, 'super'),
-('Taipan', 'TAIPAN', 25000, 'super'),
-('Tempesta', 'TEMPESTA', 25000, 'super'),
-('Tezeract', 'TEZERACT', 25000, 'super'),
-('Turismo R', 'TURISMOR', 25000, 'super'),
-('Tyrant', 'TYRANT', 25000, 'super'),
-('Tyrus', 'TYRUS', 25000, 'super'),
-('Vacca', 'VACCA', 25000, 'super'),
-('Vagner', 'VAGNER', 25000, 'super'),
-('Vigilante', 'VIGILANTE', 25000, 'super'),
-('Visione', 'VISIONE', 25000, 'super'),
-('Voltic', 'VOLTIC', 25000, 'super'),
-('Rocket Voltic', 'VOLTIC2', 25000, 'super'),
-('XA-21', 'XA21', 25000, 'super'),
-('Zentorno', 'ZENTORNO', 25000, 'super'),
-
-# Motorcycles
-## Sport Bike
-## Cruisers
-## Softtail
-## Enduro
-('Akuma', 'AKUMA', 25000, 'smoto'),
-('Avarus', 'AVARUS', 25000, 'chopper'),
-('Bagger', 'BAGGER', 25000, 'cruiser'),
-('Bati 801', 'BATI', 25000, 'smoto'),
-('Bat 801RR', 'BATI2', 25000, 'smoto'),
-('BF400', 'BF400', 25000, 'moto'),
-('Carbon RS', 'CARBONRS', 25000, 'smoto'),
-('Chimera', 'CHIMERA', 25000, 'chopper'),
-('Cliffhanger', 'CLIFFHANGER', 25000, 'softtail'),
-('Daemon', 'DAEMON', 25000, 'chopper'),
-('Daemon II', 'DAEMON2', 25000, 'chopper'),
-('Defiler', 'DEFILER', 25000, 'smoto'),
-('Apocalypse Deathbike', 'DEATHBIKE', 25000, 'moto'),
-('Future Shock Deathbike', 'DEATHBIKE2', 25000, 'moto'),
-('Nightmare Deathbike', 'DEATHBIKE3', 25000, 'moto'),
-('Diablous', 'DIABLOUS', 25000, 'moto'),
-('Diablous Custom', 'DIABLOUS2', 25000, 'moto'),
-('Double-T', 'DOUBLE', 25000, 'smoto'),
-('Enduro', 'ENDURO', 25000, 'enduro'),
-('Esskey', 'ESSKEY', 25000, 'moto'),
-('Fagio Sport', 'FAGGIO', 25000, 'moped'),
-('Fagio', 'FAGGIO2', 25000, 'moped'),
-('Fagio Mod', 'FAGGIO3', 25000, 'moped'),
-('FCR 1000', 'FCR', 25000, 'smoto'),
-('FCR 1000 Custom', 'FCR2', 25000, 'smoto'),
-('Gargoyle', 'GARGOYLE', 25000, 'chopper'),
-('Hakuchou', 'HAKUCHOU', 25000, 'smoto'),
-('Hakuchou Drag', 'HAKUCHOU2', 25000, 'smoto'),
-('Hexer', 'HEXER', 25000, 'chopper'),
-('Innovation', 'INNOVATION', 25000, 'chopper'),
-('Lectro', 'LECTRO', 25000, 'moto'),
-('Manchez', 'MANCHEZ', 25000, 'enduro'),
-('Nemesis', 'NEMESIS', 25000, 'smoto'),
-('Nightblade', 'NIGHTBLADE', 25000, 'moto'),
-('Opressor', 'OPPRESSOR', 25000, 'moto'),
-('Opressor Mk II', 'OPPRESSOR2', 25000, 'moto'),
-('PCJ 600', 'PCJ', 25000, 'smoto'),
-('Ratbike', 'RATBIKE', 25000, 'softtail'),
-('Ruffian', 'RUFFIAN', 25000, 'smoto'),
-('Sanchez (livery)', 'SANCHEZ', 25000, 'enduro'),
-('Sanchez', 'SANCHEZ2', 25000, 'enduro'),
-('Sanctus', 'SANCTUS', 25000, 'chopper'),
-('Shotaro', 'SHOTARO', 25000, 'moto'),
-('Sovereign', 'SOVEREIGN', 25000, 'softtail'),
-('Thrust', 'THRUST', 25000, 'moto'),
-('Vader', 'VADER', 25000, 'smoto'),
-('Vindicator', 'VINDICATOR', 25000, 'moto'),
-('Vortex', 'VORTEX', 25000, 'smoto'),
-('Wolfsbane', 'WOLFSBANE', 25000, 'softtail'),
-('Zombie Bobber', 'ZOMBIEA', 25000, 'chopper'),
-('Zombie Chopper', 'ZOMBIEB', 25000, 'chopper'),
-
-# Offroad
-## Military ##
-('Injection', 'BFINJECTION', 25000, 'offroad'),
-('Bifta', 'BIFTA', 25000, 'offroad'),
-('Blazer', 'BLAZER', 25000, 'offroad'),
-('Blazer Lifeguard', 'BLAZER2', 25000, 'offroad'),
-('Hot Rod Blazer', 'BLAZER3', 25000, 'offroad'),
-('Street Blazer', 'BLAZER4', 25000, 'offroad'),
-('Blazer Aqua', 'BLAZER5', 25000, 'offroad'),
-('Bodhi', 'BODHI2', 25000, 'offroad'),
-('Brawler', 'BRAWLER', 25000, 'offroad'),
-('Apocalypse Bruiser', 'BRUISER', 25000, 'offroad'),
-('Future Shock Bruiser', 'BRUISER2', 25000, 'offroad'),
-('Nightmare Bruiser', 'BRUISER3', 25000, 'offroad'),
-('Apocalypse Brutus', 'BRUTUS', 25000, 'offroad'),
-('Future Shock Brutus', 'BRUTUS2', 25000, 'offroad'),
-('Nightmare Brutus', 'BRUTUS3', 25000, 'offroad'),
-('Caracara', 'CARACARA', 25000, 'offroad'),
-('Duneloader', 'DLOADER', 25000, 'offroad'),
-('Dubsta 6x6', 'DUBSTA3', 25000, 'offroad'),
-('Dune Buggy', 'DUNE', 25000, 'offroad'),
-('Space Docker', 'DUNE2', 25000, 'offroad'),
-('Dune FAV', 'DUNE3', 25000, 'offroad'),
-('Ramp Buggy', 'DUNE4', 25000, 'offroad'),
-('Ramp Buggy II', 'DUNE5', 25000, 'offroad'),
-('Freecrawler', 'FREECRAWLER', 25000, 'offroad'),
-('Insurgent Pick-Up', 'INSURGENT', 25000, 'offroad'),
-('Insurgent', 'INSURGENT2', 25000, 'offroad'),
-('Insurgent Pick-Up Custom', 'INSURGENT3', 25000, 'offroad'),
-('Kalahari', 'KALAHARI', 25000, 'offroad'),
-('Kamacho', 'KAMACHO', 25000, 'offroad'),
-('Marshal', 'MARSHALL', 25000, 'offroad'),
-('Menacer', 'MENACER', 25000, 'offroad'),
-('Mesa', 'MESA3', 25000, 'offroad'),
-('Liberator', 'MONSTER', 25000, 'offroad'),
-('Apocalypse Sasquatch', 'MONSTER3', 25000, 'offroad'),
-('Future Shock Sasquatch', 'MONSTER4', 25000, 'offroad'),
-('Nightmare Sasquatch', 'MONSTER5', 25000, 'offroad'),
-('Nightshark', 'NIGHTSHARK', 25000, 'offroad'),
-('Rancher XL', 'RANCHERXL', 25000, 'offroad'),
-('Rancher XL II', 'RANCHERXL2', 25000, 'offroad'),
-('RC Bandito', 'RCBANDITO', 25000, 'offroad'),
-('Rebel', 'REBEL', 25000, 'offroad'),
-('Rusty Rebel', 'REBEL2', 25000, 'offroad'),
-('Riata', 'RIATA', 25000, 'offroad'),
-('Sandking XL', 'SANDKING', 25000, 'offroad'),
-('Sandking SWB', 'SANDKING2', 25000, 'offroad'),
-('Technical', 'TECHNICAL', 25000, 'offroad'),
-('Technical Aqua', 'TECHNICAL2', 25000, 'offroad'),
-('Technical Custom', 'TECHNICAL3', 25000, 'offroad'),
-('Trophy Truck', 'TROPHYTRUCK', 25000, 'offroad'),
-('Desert Raid', 'TROPHYTRUCK2', 25000, 'offroad');
-
-# Vans
-
-
-# Exotics
-('18 Chevy Camaro ZL1', '2018zl1', 70000, 'exotic'),
-('19 Shelby GT500', '19gt500', 70000, 'exotic'),
-('Aston Martin One-77', 'one77', 70000, 'exotic'),
-('Audi A6', 'a615', 70000, 'exotic'),
-('Audi R8', 'ar8lb', 70000, 'exotic'),
-('13 Bentley Continental GT', 'contgt13', 70000, 'exotic'),
-('17 Bugatti Chiron', '2017chiron', 70000, 'exotic'),
-('Chevy Chevelle SS 454', 'chevelless', 70000, 'exotic'),
-('Chevy Corvette C7', 'c7', 70000, 'exotic'),
-#('Cadilac ATSV', 'cats', 70000, 'exotic'),
-('18 Dodge Challenger Demon', 'demon', 70000, 'exotic'),
-('16 Dodge Charger SRT', '16charger', 70000, 'exotic'),
-('Dodge Viper SRT', 'viper', 70000, 'exotic'),
-('18 Ford Mustang GT', 'fmgt', 70000, 'exotic'),
-('17 Ford GT', 'gt17', 70000, 'exotic'),
-('15 Ford Mustang', 'mgt', 70000, 'exotic'),
-('GMC Yukon Denali', 'gmcyd', 70000, 'exotic'),
-('Ninja', 'H2', 70000, 'exotic'),
-('Koensigsegg Agera R', 'acsr', 70000, 'exotic'),
-('McLaren P1', 'p1', 70000, 'exotic'),
-('Nissan GTR', 'gt', 70000, 'exotic'),
-('Nissan 370Z', '370z', 70000, 'exotic'),
-('Porsche GT2RS', 'GT2RS', 70000, 'exotic'),
-('Porsche 918 Spyder', '918', 70000, 'exotic'),
-
-('Honda Civic Type R', 'EK9', 70000, 'rally'),
-('Mitsubishi Evo IX', 'evo9', 70000, 'rally'),
-('Subaru WRX STI', 'subwrx', 70000, 'rally'),
-
-('Presidential Limo', 'cone', 70000, 'special'),
+('Adder', 'adder', 900000, 'super'),
+('Akuma', 'AKUMA', 7500, 'motorcycles'),
+('Alpha', 'alpha', 60000, 'sports'),
+('Ardent', 'ardent', 1150000, 'sportsclassics'),
+('Asea', 'asea', 5500, 'sedans'),
+('Autarch', 'autarch', 1955000, 'super'),
+('Avarus', 'avarus', 18000, 'motorcycles'),
+('Bagger', 'bagger', 13500, 'motorcycles'),
+('Baller', 'baller2', 40000, 'suvs'),
+('Baller Sport', 'baller3', 60000, 'suvs'),
+('Banshee', 'banshee', 70000, 'sports'),
+('Banshee 900R', 'banshee2', 255000, 'super'),
+('Bati 801', 'bati', 12000, 'motorcycles'),
+('Bati 801RR', 'bati2', 19000, 'motorcycles'),
+('Bestia GTS', 'bestiagts', 55000, 'sports'),
+('BF400', 'bf400', 6500, 'motorcycles'),
+('Bf Injection', 'bfinjection', 16000, 'offroad'),
+('Bifta', 'bifta', 12000, 'offroad'),
+('Bison', 'bison', 45000, 'vans'),
+('Blade', 'blade', 15000, 'muscle'),
+('Blazer', 'blazer', 6500, 'offroad'),
+('Blazer Sport', 'blazer4', 8500, 'offroad'),
+('blazer5', 'blazer5', 1755600, 'offroad'),
+('Blista', 'blista', 8000, 'compacts'),
+('BMX (velo)', 'bmx', 160, 'motorcycles'),
+('Bobcat XL', 'bobcatxl', 32000, 'vans'),
+('Brawler', 'brawler', 45000, 'offroad'),
+('Brioso R/A', 'brioso', 18000, 'compacts'),
+('Btype', 'btype', 62000, 'sportsclassics'),
+('Btype Hotroad', 'btype2', 155000, 'sportsclassics'),
+('Btype Luxe', 'btype3', 85000, 'sportsclassics'),
+('Buccaneer', 'buccaneer', 18000, 'muscle'),
+('Buccaneer Rider', 'buccaneer2', 24000, 'muscle'),
+('Buffalo', 'buffalo', 12000, 'sports'),
+('Buffalo S', 'buffalo2', 20000, 'sports'),
+('Bullet', 'bullet', 90000, 'super'),
+('Burrito', 'burrito3', 19000, 'vans'),
+('Camper', 'camper', 42000, 'vans'),
+('Carbonizzare', 'carbonizzare', 75000, 'sports'),
+('Carbon RS', 'carbonrs', 18000, 'motorcycles'),
+('Casco', 'casco', 30000, 'sportsclassics'),
+('Cavalcade', 'cavalcade2', 55000, 'suvs'),
+('Cheetah', 'cheetah', 375000, 'super'),
+('Chimera', 'chimera', 38000, 'motorcycles'),
+('Chino', 'chino', 15000, 'muscle'),
+('Chino Luxe', 'chino2', 19000, 'muscle'),
+('Cliffhanger', 'cliffhanger', 9500, 'motorcycles'),
+('Cognoscenti Cabrio', 'cogcabrio', 55000, 'coupes'),
+('Cognoscenti', 'cognoscenti', 55000, 'sedans'),
+('Comet', 'comet2', 65000, 'sports'),
+('Comet 5', 'comet5', 1145000, 'sports'),
+('Contender', 'contender', 70000, 'suvs'),
+('Coquette', 'coquette', 65000, 'sports'),
+('Coquette Classic', 'coquette2', 40000, 'sportsclassics'),
+('Coquette BlackFin', 'coquette3', 55000, 'muscle'),
+('Cruiser (velo)', 'cruiser', 510, 'motorcycles'),
+('Cyclone', 'cyclone', 1890000, 'super'),
+('Daemon', 'daemon', 11500, 'motorcycles'),
+('Daemon High', 'daemon2', 13500, 'motorcycles'),
+('Defiler', 'defiler', 9800, 'motorcycles'),
+('Deluxo', 'deluxo', 4721500, 'sportsclassics'),
+('Dominator', 'dominator', 35000, 'muscle'),
+('Double T', 'double', 28000, 'motorcycles'),
+('Dubsta', 'dubsta', 45000, 'suvs'),
+('Dubsta Luxuary', 'dubsta2', 60000, 'suvs'),
+('Bubsta 6x6', 'dubsta3', 120000, 'offroad'),
+('Dukes', 'dukes', 28000, 'muscle'),
+('Dune Buggy', 'dune', 8000, 'offroad'),
+('Elegy', 'elegy2', 38500, 'sports'),
+('Emperor', 'emperor', 8500, 'sedans'),
+('Enduro', 'enduro', 5500, 'motorcycles'),
+('Entity 2', 'entity2', 500000, 'super'),
+('Entity XF', 'entityxf', 425000, 'super'),
+('Esskey', 'esskey', 4200, 'motorcycles'),
+('Exemplar', 'exemplar', 32000, 'coupes'),
+('F620', 'f620', 40000, 'coupes'),
+('Faction', 'faction', 20000, 'muscle'),
+('Faction Rider', 'faction2', 30000, 'muscle'),
+('Faction XL', 'faction3', 40000, 'muscle'),
+('Faggio', 'faggio', 1900, 'motorcycles'),
+('Vespa', 'faggio2', 2800, 'motorcycles'),
+('Felon', 'felon', 42000, 'coupes'),
+('Felon GT', 'felon2', 55000, 'coupes'),
+('Feltzer', 'feltzer2', 55000, 'sports'),
+('Stirling GT', 'feltzer3', 65000, 'sportsclassics'),
+('Fixter (velo)', 'fixter', 225, 'motorcycles'),
+('FMJ', 'fmj', 185000, 'super'),
+('Fhantom', 'fq2', 17000, 'suvs'),
+('Fugitive', 'fugitive', 12000, 'sedans'),
+('Furore GT', 'furoregt', 45000, 'sports'),
+('Fusilade', 'fusilade', 40000, 'sports'),
+('Gargoyle', 'gargoyle', 16500, 'motorcycles'),
+('Gauntlet', 'gauntlet', 30000, 'muscle'),
+('Gang Burrito', 'gburrito', 45000, 'vans'),
+('Burrito', 'gburrito2', 29000, 'vans'),
+('Glendale', 'glendale', 6500, 'sedans'),
+('Grabger', 'granger', 50000, 'suvs'),
+('Gresley', 'gresley', 47500, 'suvs'),
+('GT 500', 'gt500', 785000, 'sportsclassics'),
+('Guardian', 'guardian', 45000, 'offroad'),
+('Hakuchou', 'hakuchou', 31000, 'motorcycles'),
+('Hakuchou Sport', 'hakuchou2', 55000, 'motorcycles'),
+('Hermes', 'hermes', 535000, 'muscle'),
+('Hexer', 'hexer', 12000, 'motorcycles'),
+('Hotknife', 'hotknife', 125000, 'muscle'),
+('Huntley S', 'huntley', 40000, 'suvs'),
+('Hustler', 'hustler', 625000, 'muscle'),
+('Infernus', 'infernus', 180000, 'super'),
+('Innovation', 'innovation', 23500, 'motorcycles'),
+('Intruder', 'intruder', 7500, 'sedans'),
+('Issi', 'issi2', 10000, 'compacts'),
+('Jackal', 'jackal', 38000, 'coupes'),
+('Jester', 'jester', 65000, 'sports'),
+('Jester(Racecar)', 'jester2', 135000, 'sports'),
+('Journey', 'journey', 6500, 'vans'),
+('Kamacho', 'kamacho', 345000, 'offroad'),
+('Khamelion', 'khamelion', 38000, 'sports'),
+('Kuruma', 'kuruma', 30000, 'sports'),
+('Landstalker', 'landstalker', 35000, 'suvs'),
+('RE-7B', 'le7b', 325000, 'super'),
+('Lynx', 'lynx', 40000, 'sports'),
+('Mamba', 'mamba', 70000, 'sports'),
+('Manana', 'manana', 12800, 'sportsclassics'),
+('Manchez', 'manchez', 5300, 'motorcycles'),
+('Massacro', 'massacro', 65000, 'sports'),
+('Massacro(Racecar)', 'massacro2', 130000, 'sports'),
+('Mesa', 'mesa', 16000, 'suvs'),
+('Mesa Trail', 'mesa3', 40000, 'suvs'),
+('Minivan', 'minivan', 13000, 'vans'),
+('Monroe', 'monroe', 55000, 'sportsclassics'),
+('The Liberator', 'monster', 210000, 'offroad'),
+('Moonbeam', 'moonbeam', 18000, 'vans'),
+('Moonbeam Rider', 'moonbeam2', 35000, 'vans'),
+('Nemesis', 'nemesis', 5800, 'motorcycles'),
+('Neon', 'neon', 1500000, 'sports'),
+('Nightblade', 'nightblade', 35000, 'motorcycles'),
+('Nightshade', 'nightshade', 65000, 'muscle'),
+('9F', 'ninef', 65000, 'sports'),
+('9F Cabrio', 'ninef2', 80000, 'sports'),
+('Omnis', 'omnis', 35000, 'sports'),
+('Oppressor', 'oppressor', 3524500, 'super'),
+('Oracle XS', 'oracle2', 35000, 'coupes'),
+('Osiris', 'osiris', 160000, 'super'),
+('Panto', 'panto', 10000, 'compacts'),
+('Paradise', 'paradise', 19000, 'vans'),
+('Pariah', 'pariah', 1420000, 'sports'),
+('Patriot', 'patriot', 55000, 'suvs'),
+('PCJ-600', 'pcj', 6200, 'motorcycles'),
+('Penumbra', 'penumbra', 28000, 'sports'),
+('Pfister', 'pfister811', 85000, 'super'),
+('Phoenix', 'phoenix', 12500, 'muscle'),
+('Picador', 'picador', 18000, 'muscle'),
+('Pigalle', 'pigalle', 20000, 'sportsclassics'),
+('Prairie', 'prairie', 12000, 'compacts'),
+('Premier', 'premier', 8000, 'sedans'),
+('Primo Custom', 'primo2', 14000, 'sedans'),
+('X80 Proto', 'prototipo', 2500000, 'super'),
+('Radius', 'radi', 29000, 'suvs'),
+('raiden', 'raiden', 1375000, 'sports'),
+('Rapid GT', 'rapidgt', 35000, 'sports'),
+('Rapid GT Convertible', 'rapidgt2', 45000, 'sports'),
+('Rapid GT3', 'rapidgt3', 885000, 'sportsclassics'),
+('Reaper', 'reaper', 150000, 'super'),
+('Rebel', 'rebel2', 35000, 'offroad'),
+('Regina', 'regina', 5000, 'sedans'),
+('Retinue', 'retinue', 615000, 'sportsclassics'),
+('Revolter', 'revolter', 1610000, 'sports'),
+('riata', 'riata', 380000, 'offroad'),
+('Rocoto', 'rocoto', 45000, 'suvs'),
+('Ruffian', 'ruffian', 6800, 'motorcycles'),
+('Ruiner 2', 'ruiner2', 5745600, 'muscle'),
+('Rumpo', 'rumpo', 15000, 'vans'),
+('Rumpo Trail', 'rumpo3', 19500, 'vans'),
+('Sabre Turbo', 'sabregt', 20000, 'muscle'),
+('Sabre GT', 'sabregt2', 25000, 'muscle'),
+('Sanchez', 'sanchez', 5300, 'motorcycles'),
+('Sanchez Sport', 'sanchez2', 5300, 'motorcycles'),
+('Sanctus', 'sanctus', 25000, 'motorcycles'),
+('Sandking', 'sandking', 55000, 'offroad'),
+('Savestra', 'savestra', 990000, 'sportsclassics'),
+('SC 1', 'sc1', 1603000, 'super'),
+('Schafter', 'schafter2', 25000, 'sedans'),
+('Schafter V12', 'schafter3', 50000, 'sports'),
+('Scorcher (velo)', 'scorcher', 280, 'motorcycles'),
+('Seminole', 'seminole', 25000, 'suvs'),
+('Sentinel', 'sentinel', 32000, 'coupes'),
+('Sentinel XS', 'sentinel2', 40000, 'coupes'),
+('Sentinel3', 'sentinel3', 650000, 'sports'),
+('Seven 70', 'seven70', 39500, 'sports'),
+('ETR1', 'sheava', 220000, 'super'),
+('Shotaro Concept', 'shotaro', 320000, 'motorcycles'),
+('Slam Van', 'slamvan3', 11500, 'muscle'),
+('Sovereign', 'sovereign', 22000, 'motorcycles'),
+('Stinger', 'stinger', 80000, 'sportsclassics'),
+('Stinger GT', 'stingergt', 75000, 'sportsclassics'),
+('Streiter', 'streiter', 500000, 'sports'),
+('Stretch', 'stretch', 90000, 'sedans'),
+('Stromberg', 'stromberg', 3185350, 'sports'),
+('Sultan', 'sultan', 15000, 'sports'),
+('Sultan RS', 'sultanrs', 65000, 'super'),
+('Super Diamond', 'superd', 130000, 'sedans'),
+('Surano', 'surano', 50000, 'sports'),
+('Surfer', 'surfer', 12000, 'vans'),
+('T20', 't20', 300000, 'super'),
+('Tailgater', 'tailgater', 30000, 'sedans'),
+('Tampa', 'tampa', 16000, 'muscle'),
+('Drift Tampa', 'tampa2', 80000, 'sports'),
+('Thrust', 'thrust', 24000, 'motorcycles'),
+('Tri bike (velo)', 'tribike3', 520, 'motorcycles'),
+('Trophy Truck', 'trophytruck', 60000, 'offroad'),
+('Trophy Truck Limited', 'trophytruck2', 80000, 'offroad'),
+('Tropos', 'tropos', 40000, 'sports'),
+('Turismo R', 'turismor', 350000, 'super'),
+('Tyrus', 'tyrus', 600000, 'super'),
+('Vacca', 'vacca', 120000, 'super'),
+('Vader', 'vader', 7200, 'motorcycles'),
+('Verlierer', 'verlierer2', 70000, 'sports'),
+('Vigero', 'vigero', 12500, 'muscle'),
+('Virgo', 'virgo', 14000, 'muscle'),
+('Viseris', 'viseris', 875000, 'sportsclassics'),
+('Visione', 'visione', 2250000, 'super'),
+('Voltic', 'voltic', 90000, 'super'),
+('Voltic 2', 'voltic2', 3830400, 'super'),
+('Voodoo', 'voodoo', 7200, 'muscle'),
+('Vortex', 'vortex', 9800, 'motorcycles'),
+('Warrener', 'warrener', 4000, 'sedans'),
+('Washington', 'washington', 9000, 'sedans'),
+('Windsor', 'windsor', 95000, 'coupes'),
+('Windsor Drop', 'windsor2', 125000, 'coupes'),
+('Woflsbane', 'wolfsbane', 9000, 'motorcycles'),
+('XLS', 'xls', 32000, 'suvs'),
+('Yosemite', 'yosemite', 485000, 'muscle'),
+('Youga', 'youga', 10800, 'vans'),
+('Youga Luxuary', 'youga2', 14500, 'vans'),
+('Z190', 'z190', 900000, 'sportsclassics'),
+('Zentorno', 'zentorno', 1500000, 'super'),
+('Zion', 'zion', 36000, 'coupes'),
+('Zion Cabrio', 'zion2', 45000, 'coupes'),
+('Zombie', 'zombiea', 9500, 'motorcycles'),
+('Zombie Luxuary', 'zombieb', 12000, 'motorcycles'),
+('Z-Type', 'ztype', 220000, 'sportsclassics');
 
 -- --------------------------------------------------------
 
@@ -1955,9 +1738,9 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `vehicle_categories` (
-`name` varchar(60) NOT NULL,
-`label` varchar(60) NOT NULL,
-PRIMARY KEY (`name`)
+  `name` varchar(60) NOT NULL,
+  `label` varchar(60) NOT NULL,
+  PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1975,15 +1758,7 @@ INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 ('sportsclassics', 'Sports Classics'),
 ('super', 'Super'),
 ('suvs', 'SUVs'),
-('vans', 'Vans'),
-('special', 'Special'),
-('exotic', 'Exotic'),
-('rally', 'Rally'),
-('smoto', 'Sport Bikes'),
-('moto', 'Moto'),
-('chopper', 'Chopper'),
-('softtail', 'Soft Tail'),
-('enduro', 'Enduro');
+('vans', 'Vans');
 
 -- --------------------------------------------------------
 
@@ -1992,12 +1767,12 @@ INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `vehicle_sold` (
-`client` varchar(50) NOT NULL,
-`model` varchar(50) NOT NULL,
-`plate` varchar(50) NOT NULL,
-`soldby` varchar(50) NOT NULL,
-`date` varchar(50) NOT NULL,
-PRIMARY KEY (`plate`)
+  `client` varchar(50) NOT NULL,
+  `model` varchar(50) NOT NULL,
+  `plate` varchar(50) NOT NULL,
+  `soldby` varchar(50) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  PRIMARY KEY (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2007,11 +1782,11 @@ PRIMARY KEY (`plate`)
 --
 
 CREATE TABLE IF NOT EXISTS `weashops` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`zone` varchar(255) NOT NULL,
-`item` varchar(255) NOT NULL,
-`price` int(11) NOT NULL,
-PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `zone` varchar(255) NOT NULL,
+  `item` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -2020,40 +1795,38 @@ PRIMARY KEY (`id`)
 
 INSERT INTO `weashops` (`id`, `zone`, `item`, `price`) VALUES
 (1, 'GunShop', 'WEAPON_PISTOL', 300),
-(3, 'GunShop', 'WEAPON_FLASHLIGHT', 60),
-(5, 'GunShop', 'WEAPON_MACHETE', 90),
-(7, 'GunShop', 'WEAPON_NIGHTSTICK', 150),
-(9, 'GunShop', 'WEAPON_BAT', 100),
-(11, 'GunShop', 'WEAPON_STUNGUN', 50),
-(13, 'GunShop', 'WEAPON_MICROSMG', 1400),
-(15, 'GunShop', 'WEAPON_PUMPSHOTGUN', 3400),
-(17, 'GunShop', 'WEAPON_ASSAULTRIFLE', 10000),
-(19, 'GunShop', 'WEAPON_SPECIALCARBINE', 15000),
-(21, 'GunShop', 'WEAPON_SNIPERRIFLE', 22000),
-(23, 'GunShop', 'WEAPON_FIREWORK', 18000),
-(25, 'GunShop', 'WEAPON_GRENADE', 500),
-(27, 'GunShop', 'WEAPON_BZGAS', 200),
-(29, 'GunShop', 'WEAPON_FIREEXTINGUISHER', 100),
-(31, 'GunShop', 'WEAPON_BALL', 50),
-(33, 'GunShop', 'WEAPON_SMOKEGRENADE', 100),
-
-
 (2, 'BlackWeashop', 'WEAPON_PISTOL', 500),
+(3, 'GunShop', 'WEAPON_FLASHLIGHT', 60),
 (4, 'BlackWeashop', 'WEAPON_FLASHLIGHT', 70),
+(5, 'GunShop', 'WEAPON_MACHETE', 90),
 (6, 'BlackWeashop', 'WEAPON_MACHETE', 110),
+(7, 'GunShop', 'WEAPON_NIGHTSTICK', 150),
 (8, 'BlackWeashop', 'WEAPON_NIGHTSTICK', 150),
+(9, 'GunShop', 'WEAPON_BAT', 100),
 (10, 'BlackWeashop', 'WEAPON_BAT', 100),
+(11, 'GunShop', 'WEAPON_STUNGUN', 50),
 (12, 'BlackWeashop', 'WEAPON_STUNGUN', 50),
+(13, 'GunShop', 'WEAPON_MICROSMG', 1400),
 (14, 'BlackWeashop', 'WEAPON_MICROSMG', 1700),
+(15, 'GunShop', 'WEAPON_PUMPSHOTGUN', 3400),
 (16, 'BlackWeashop', 'WEAPON_PUMPSHOTGUN', 3500),
+(17, 'GunShop', 'WEAPON_ASSAULTRIFLE', 10000),
 (18, 'BlackWeashop', 'WEAPON_ASSAULTRIFLE', 11000),
+(19, 'GunShop', 'WEAPON_SPECIALCARBINE', 15000),
 (20, 'BlackWeashop', 'WEAPON_SPECIALCARBINE', 16500),
+(21, 'GunShop', 'WEAPON_SNIPERRIFLE', 22000),
 (22, 'BlackWeashop', 'WEAPON_SNIPERRIFLE', 24000),
+(23, 'GunShop', 'WEAPON_FIREWORK', 18000),
 (24, 'BlackWeashop', 'WEAPON_FIREWORK', 20000),
+(25, 'GunShop', 'WEAPON_GRENADE', 500),
 (26, 'BlackWeashop', 'WEAPON_GRENADE', 650),
+(27, 'GunShop', 'WEAPON_BZGAS', 200),
 (28, 'BlackWeashop', 'WEAPON_BZGAS', 350),
+(29, 'GunShop', 'WEAPON_FIREEXTINGUISHER', 100),
 (30, 'BlackWeashop', 'WEAPON_FIREEXTINGUISHER', 100),
+(31, 'GunShop', 'WEAPON_BALL', 50),
 (32, 'BlackWeashop', 'WEAPON_BALL', 50),
+(33, 'GunShop', 'WEAPON_SMOKEGRENADE', 100),
 (34, 'BlackWeashop', 'WEAPON_SMOKEGRENADE', 100),
 (35, 'BlackWeashop', 'WEAPON_APPISTOL', 1100),
 (36, 'BlackWeashop', 'WEAPON_CARBINERIFLE', 12000),
@@ -2069,12 +1842,12 @@ INSERT INTO `weashops` (`id`, `zone`, `item`, `price`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `whitelist` (
-`identifier` varchar(70) NOT NULL,
-`last_connection` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-`ban_reason` text,
-`ban_until` timestamp NULL DEFAULT NULL,
-`vip` int(11) NOT NULL DEFAULT '0',
-PRIMARY KEY (`identifier`)
+  `identifier` varchar(70) NOT NULL,
+  `last_connection` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `ban_reason` text,
+  `ban_until` timestamp NULL DEFAULT NULL,
+  `vip` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
