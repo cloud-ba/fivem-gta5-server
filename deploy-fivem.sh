@@ -146,7 +146,7 @@ echo "sESX"
 echo "essentialmode"
 # https://docs.essentialmode.com
     echo "Get Packages"
-        wget -P "$TFIVEM" https://github.com/kanersps/essentialmode/archive/6.2.2.tar.gz
+        wget -P "$TFIVEM" https://github.com/kanersps/essentialmode/archive/refs/tags/6.4.2.zip
         tar -xf "$TFIVEM/6.2.2.tar.gz" -C "$TFIVEM/essentialmode"
     cp -R "$TFIVEM"/essentialmode/essentialmode-6.2.2 "$RESOURCES"/essentialmode
     #    mysql --user='hommer' --password='8gtw0JcpG3xW' fivem_data < [essential]/es_extended/es_extended.sql
