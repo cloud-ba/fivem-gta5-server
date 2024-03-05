@@ -1,7 +1,7 @@
 #####################################################
 #####################################################
 #####
-#####   https://www.gamehoster.net
+#####   https://www.serverbih.com
 #####   Grand Theft Auto - FiveM
 #####         Read Me
 #####   ESX & Mods Custom Server
