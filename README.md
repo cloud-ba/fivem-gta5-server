@@ -1,7 +1,7 @@
 #####################################################
 #####################################################
 #####
-#####   https://www.serverbih.com
+#####   https://www.bihstream.com
 #####   Grand Theft Auto - FiveM
 #####         Read Me
 #####   ESX & Mods Custom Server
